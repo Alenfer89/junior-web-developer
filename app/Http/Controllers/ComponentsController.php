@@ -24,9 +24,17 @@ class ComponentsController extends Controller
     public function store(Request $request){
 
         $names = Component::pluck('name')->toArray();
-        dd($names);
-
-        return Component::factory()->create(['name' => $request->name]);
+        //dd($names);
+        if(in_array($request->name, $names)){
+            echo 'cè già';
+            return response()->json([
+                'status' => 0,
+                'message' => "Component already present",
+            ], 422);
+        } else {
+            echo 'non cè';
+        }
+        //return Component::factory()->create(['name' => $request->name]);
 
     }
 
