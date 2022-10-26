@@ -9,6 +9,15 @@ class Character extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'height',
+        'mass',
+        'hair_color',
+        'skin_color',
+        'homeworld',
+    ];
+
     public function films(){
         return $this->belongsToMany("App\Models\Film");
     }

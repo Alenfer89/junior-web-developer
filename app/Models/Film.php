@@ -9,6 +9,10 @@ class Film extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'url',
+    ];
+
     public function characters(){
         return $this->belongsToMany('App\Models\Character');
     }
