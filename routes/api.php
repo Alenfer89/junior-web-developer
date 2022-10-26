@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentsController;
+use App\Http\Controllers\CharactersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,6 @@ use App\Http\Controllers\ComponentsController;
 Route::post('components/clean-me', [ComponentsController::class, 'clean_me']);
 Route::get('components', [ComponentsController::class, 'index']);
 Route::post('components', [ComponentsController::class, 'store']);
+
+Route::get('characters', [CharactersController::class, 'index']);
 
