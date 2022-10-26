@@ -34,7 +34,12 @@ class ComponentsController extends Controller
         } else {
             echo 'non cè';
             $c = Component::factory()->create(['name' => $request->name]);
-            return response($c, 200);
+            //return response($c, 200);
+            return response()->json([
+                'status' => 0,
+                'message' => "Component added",
+                'component' => $c
+            ], 200);
         }
         //return Component::factory()->create(['name' => $request->name]);
 
