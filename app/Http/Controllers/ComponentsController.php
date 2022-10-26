@@ -10,7 +10,13 @@ class ComponentsController extends Controller
 {
     public function index(){
 
-        return Component::get();
+        $response = Component::get();
+        //dd(json_decode($response));
+        $content = json_decode($response);
+        $y = array_column(array_column(array_column($content, 'options'), 'position'), 'y');
+        array_multisort($y, SORT_ASC, $content);
+        
+        return $content;
 
     }
 
