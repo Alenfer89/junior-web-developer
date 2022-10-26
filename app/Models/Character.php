@@ -10,6 +10,6 @@ class Character extends Model
     use HasFactory;
 
     public function films(){
-
+        return $this->belongsToMany("App\Models\Film");
     }
 }

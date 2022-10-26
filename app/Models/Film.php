@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Film extends Model
 {
     use HasFactory;
+
+    public function characters(){
+        return $this->belongsToMany('App\Models\Character');
+    }
 }
