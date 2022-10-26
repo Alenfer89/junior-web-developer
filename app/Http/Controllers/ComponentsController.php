@@ -33,6 +33,8 @@ class ComponentsController extends Controller
             ], 422);
         } else {
             echo 'non cè';
+            $c = Component::factory()->create(['name' => $request->name]);
+            return response($c, 200);
         }
         //return Component::factory()->create(['name' => $request->name]);
 
