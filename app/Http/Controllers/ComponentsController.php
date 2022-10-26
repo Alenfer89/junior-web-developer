@@ -13,14 +13,18 @@ class ComponentsController extends Controller
         $response = Component::get();
         //dd(json_decode($response));
         $content = json_decode($response);
-        $y = array_column(array_column(array_column($content, 'options'), 'position'), 'y');
+        //$y = array_column(array_column(array_column($content, 'options'), 'position'), 'y');
+        $y = collect($content)->map(fn($c) => $c->options->position->y)->toArray();
         array_multisort($y, SORT_ASC, $content);
-        
+
         return $content;
 
     }
 
     public function store(Request $request){
+
+        $names = Component::pluck('name')->toArray();
+        dd($names);
 
         return Component::factory()->create(['name' => $request->name]);
 
