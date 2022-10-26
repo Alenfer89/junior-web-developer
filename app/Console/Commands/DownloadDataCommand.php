@@ -44,6 +44,7 @@ class DownloadDataCommand extends Command
         //dd($response->films);
         $films = json_decode($response->films);
         dd($films);
+        //return $films;
 
         return Command::SUCCESS;
     }
