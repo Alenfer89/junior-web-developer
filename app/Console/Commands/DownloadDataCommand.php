@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Character;
 use Illuminate\Console\Command;
 
 class DownloadDataCommand extends Command
@@ -36,6 +37,13 @@ class DownloadDataCommand extends Command
          * Risultato Character::first()->films deve ritornare l'elenco di URL
          * a cui è associato il personaggio
          */
+
+
+        $response = Character::inRandomOrder()->first();
+        //dd($response);
+        //dd($response->films);
+        $films = json_decode($response->films);
+        dd($films);
 
         return Command::SUCCESS;
     }
