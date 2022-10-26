@@ -22,5 +22,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Component::factory(10)->create();
+
+        \App\Models\Character::factory(10)->create();
+
+        \App\Models\Film::factory(10)->create();
+
+        $this->call([
+            CharacterFilmTableSeeder::class
+        ]);
     }
 }
