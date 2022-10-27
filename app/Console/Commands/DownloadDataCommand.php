@@ -38,13 +38,20 @@ class DownloadDataCommand extends Command
          * a cui è associato il personaggio
          */
 
-
-        $response = Character::inRandomOrder()->first();
-        //dd($response);
-        //dd($response->films);
-        $films = json_decode($response->films);
-        dd($films);
+        //$char = Character::inRandomOrder()->first();
+        //$chars = Character::all();
+        //dd($chars);
+        //dd($char->films);
+        //$films = json_decode($char->films);
+        //dd($films);
         //return $films;
+        //return response()->json($chars);
+        //return response($chars);
+        //dd($this);
+        //dd($this->arguments());
+        
+
+        //character nel test ha valore null, quindi cercavo di far si che il comando ritornasse una collection o una chiamata api per popolarlo.
 
         return Command::SUCCESS;
     }

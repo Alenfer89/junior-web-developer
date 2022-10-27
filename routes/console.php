@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+// Artisan::command('download:data', function () {
+//     return Route::get('characters', [CharactersController::class, 'index']);
+// });
